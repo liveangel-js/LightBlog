@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>biu~biu~biu~订阅的标签~喵~</title>
+<link href="__PUBLIC__/css/Index/index.css" rel="stylesheet" type="text/css" />
+<link href="../../../Public/css/Index/index.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="__PUBLIC__/js/index.js"></script>
+<script type="text/javascript" src="../../../Public/js/index.js"></script>
+</head>
+
+
+
+<body>
+
+<div class="all">
+
+    <!--header-->
+    <include file="Public:header"/>
+    
+    <!--body-->
+    <div class="body">
+    
+        <!--content-->
+        <div id="content">
+            <!--publish article-->
+            <include file="Public:publish"/>
+            <!--article list-->
+            <include file="Public:articleList"/>                       
+        </div>
+        <!--content over-->
+        
+        <!--nav-->
+        <div id="nav">
+             <!--avatar info -->
+            <div class="blogModule">
+                <ul class="list">  
+                    <li class="item">
+                        <a href="__URL__/../User/likeBlog" style="text-decoration:none; color:black; display:block">
+                            <span class="icon" style="background:url(/Public/img/sidemenu.$6372.png) 12px 10px no-repeat;"></span>
+                            <span>我关注了</span><span id="followNumbers">{$user.followNumbers}</span><span>个博客</span>
+                            <span class="extendicon"></span>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="__URL__/../User/likeTag" style="text-decoration:none; color:black;display:block">
+                            <span class="icon" ></span>
+                           <span>我关注了<span id="tagNumbers">{$user.tagNumbers}</span>个标签</span>
+                           <span class="extendicon"></span>
+                        </a>
+                    </li>
+                    <volist name="likeTags" id="vo">
+                        <li class="item" >
+                        <a href="../Search/searchTag/tag/{$vo.tag}" style="text-decoration:none; display:block; color:black;">
+                            <span class="icon"></span>
+                            <span>{$vo.tag}</span>
+                            <span id="tag{$vo.tag}" class="tag{$vo.like}icon"  onclick="return likeTag('{$vo.tag}')"></span>
+                        </a>
+                        </li>
+                    </volist>
+                    <li class="item">
+                        <a href="__URL__/../User/likeArticle" style="text-decoration:none; color:black;display:block">
+                            <span class="icon" style="background:url(/Public/img/sidemenu.$6372.png) -58px 10px no-repeat;">
+                           </span><span>我喜欢了<span id="articleNumbers">{$user.articleNumbers}</span>篇文章</span>
+                           <span class="extendicon"></span>
+                        </a>
+                    </li>
+                </ul>            
+            </div>
+            <!--avatar info over-->        
+                        
+            <!--nav tag-->
+            <include file="Public:navBlog"/>   
+        </div>
+        <!--nav over-->
+        
+    </div>
+    <!--body over-->
+</div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+            <!--blog recommend and search-->
+            <div class="blogModule">
+                <ul class="list">  
+                    <li class="search">
+                        <form action="__URL__/../Search/searchBlog" method="get">
+                        <input type="submit" class="searchButton" style="cursor:pointer" value="" onClick="searchTag()"/>
+                        <input type="text" name="nickname" id="searchInput"  value="搜索博客" onfocus="this.value='',this.style.color='black'" size="20" />
+                        </form>
+                    </li>
+                    <volist name="recommendBlogs" id="vo">
+                    <li class="blogitem">
+                        <a href="__URL__/../User/visitBlog/uid/{$vo.uid}" style="text-decoration:none; display:block; color:black;">
+                            <img class="blogicon" src="{$vo.avatar}" width="36px" height="36px" />
+                            <span style="margin-left:10px">{$vo.nickname}</span>
+                            <span id="blog{$vo.uid}" class="blog{$vo.follow}icon" onclick="return followBlog('{$vo.uid}')"></span>
+                        </a>
+                    </li>
+                    </volist>
+                    
+                    <li class="itemMore">
+                        <a href="__URL__/../Search/moreBlog" style="text-decoration:none; color:black; display:block">
+                            <span class="icon" style="background:url(/Public/img/sidemenu.$6372.png) -24px 10px no-repeat;"></span>
+                            <span>更 多 博 客</span>
+                        </a>
+                    </li>
+                </ul>            
+            </div>
+            <!--blog recommend and search over-->

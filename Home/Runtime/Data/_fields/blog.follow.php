@@ -1,0 +1,1 @@
+{"0":"fid","1":"uid1","2":"uid2","_autoinc":true,"_pk":"fid","_type":{"fid":"int(10)","uid1":"int(10)","uid2":"int(10)"}}

@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>关注博客</title>
+<link href="__PUBLIC__/css/Index/index.css" rel="stylesheet" type="text/css" />
+<link href="../../../Public/css/Index/index.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="__PUBLIC__/js/index.js"></script>
+<script type="text/javascript" src="../../../Public/js/index.js"></script>
+</head>
+
+<body>
+<div class="all">
+
+   <!--header-->
+    <include file="Public:header"/>
+   
+   
+   
+    <!--body-->
+    <div class="body">
+        <!--content-->
+        <div id="content">
+            <div  style="margin-top:50px;width:100%;">
+                <ul style="list-style: none; border:0;padding:0;border-radius:5px;border: 1px solid #C7CACC"> 
+                    <li  style="padding:15px 25px;border: 1px solid rgb(185,185,185); background:rgb(200,200,200);line-height:64px;font-size:14px; width:596px;height:64px;">
+                        <form action="__URL__/searchBlog" method="get">
+                        <input type="text"  size="75"  name="tag" value="搜索标签" onfocus="this.value='',this.style.color='black'" style="margin-top:15px;height:30px; line-height:30px; font-size:14px; color:gray" />
+                        <input type="submit" value="搜索" style=" float:right; margin-top:15px;line-height:36px; height:36px; width:80px; letter-spacing:5px; text-align:center"/>
+                        </form>
+                    </li> 
+                </ul>            
+            </div>
+            
+            <!--article list-->
+            <include file="Public:articleList"/> 
+            
+            
+            
+        </div>
+        <!--content over-->   
+        
+        
+        
+        
+        
+        <!--nav-->
+        <div id="nav"> 
+            <!--nav user-->
+            <include file="Public:navUser"/>   
+            
+            
+            <!--tag recommend and search-->
+            <div class="tagModule"> 
+                <ul class="list">  
+
+                        <li class="item" >
+                        <a href="__URL__/../Search/searchTag/tag/{$searchTag.tag}" style="text-decoration:none; display:block; color:black;">
+                            <span class="icon"></span>
+                            <span>{$searchTag.tag}</span>
+                            <span id="tag{$searchTag.tag}" class="tag{$searchTag.like}icon"  onclick="return likeTag('{$searchTag.tag}')"></span>
+                        </a>
+                        </li>
+             
+
+                </ul>
+            </div>
+            <!--tag recommend and search over-->
+
+            
+                     
+            <!--nav tag-->
+            <include file="Public:navBlog"/>    
+            
+                      
+        </div>
+        <!--nav over-->
+        
+    </div>
+    <!-- body over-->
+    
+    
+    
+</div>
+</body>
+</html>

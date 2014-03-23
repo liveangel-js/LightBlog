@@ -1,0 +1,1 @@
+{"0":"aid","1":"title","2":"content","3":"time","4":"uid","_autoinc":true,"_pk":"aid","_type":{"aid":"int(10)","title":"varchar(45)","content":"varchar(2000)","time":"varchar(40)","uid":"int(10)"}}

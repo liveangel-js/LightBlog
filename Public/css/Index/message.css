@@ -1,0 +1,32 @@
+.messageIcon0{
+  margin-left:20px;
+  border:1px;
+  float:left;
+  width: 36px;
+  height: 46px;
+  background: url(../../img/navbar1.png) no-repeat -38px 4px;
+}
+.messageIcon1{
+  margin-left:20px;
+  border:1px;
+  float:left;
+  width: 36px;
+  height: 46px;
+  background: url(../../img/navbar.png) no-repeat -38px 4px;
+}
+.message{
+  text-decoration:none; 
+  color:black; 
+  display:block; 
+  cursor:pointer;	
+}
+.message:hover{
+	background:rgb(222,222,222);	
+}
+.messageLi{
+  border: 1px solid rgb(185,185,185); 
+  background:rgb(200,200,200);
+  line-height:46px;
+  font-size:14px; 
+  height:46px;	
+}

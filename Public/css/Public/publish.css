@@ -1,0 +1,115 @@
+.wordPublish:hover{
+  background-position:4px -5px;
+}
+.wordPublish{
+  background:url(../../img/post_icons.png) no-repeat 4px 0px ;	
+  float: left;
+  color: #9B9B9B;
+  display: block;
+  width: 75px;
+  height: 20px;
+  font-size: 14px;
+  line-height: 14px;
+  text-align: center;
+  text-indent: 8px;
+  letter-spacing: 8px;
+  text-decoration: none;
+  padding:0px;
+  padding-top: 60px;
+  margin-left:10px;
+}
+.picturePublish:hover{
+  background-position:-74px -5px;
+}
+.picturePublish{
+  background:url(../../img/post_icons.png) no-repeat -74px 0px;	
+  float: left;
+  color: #9B9B9B;
+  display: block;
+  width: 75px;
+  height: 20px;
+  font-size: 14px;
+  line-height: 14px;
+  text-align: center;
+  text-indent: 8px;
+  letter-spacing: 8px;
+  text-decoration: none;
+  padding-top: 60px;
+  margin-left:10px;
+}
+.linkPublish:hover{
+  background-position:-224px -5px;
+}
+.linkPublish{
+  background:url(../../img/post_icons.png) no-repeat -224px 0px;
+  float: left;
+  color: #9B9B9B;
+  display: block;
+  width: 75px;
+  height: 20px;
+  font-size: 14px;
+  line-height: 14px;
+  text-align: center;
+  text-indent: 8px;
+  letter-spacing: 8px;
+  text-decoration: none;
+  padding-top: 60px;
+  margin-left:10px;	
+}
+.quotoPublish:hover{
+  background-position:-148px -5px;
+}
+.quotoPublish{
+  background:url(../../img/post_icons.png) no-repeat -148px 0px;	 ;	
+  float: left;
+  color: #9B9B9B;
+  display: block;
+  width: 75px;
+  height: 20px;
+  font-size: 14px;
+  line-height: 14px;
+  text-align: center;
+  text-indent: 8px;
+  letter-spacing: 8px;
+  text-decoration: none;
+  padding-top: 60px;
+  margin-left:10px;	
+}
+.musicPublish:hover{
+  background-position:-377px -5px;
+}
+.musicPublish{
+  background:url(../../img/post_icons.png) no-repeat -377px 0px; ;	
+  float: left;
+  color: #9B9B9B;
+  display: block;
+  width: 70px;
+  height: 20px;
+  font-size: 14px;
+  line-height: 14px;
+  text-align: center;
+  text-indent: 8px;
+  letter-spacing: 8px;
+  text-decoration: none;
+  padding-top: 60px;
+  margin-left:10px;
+}
+.videoPublish:hover{
+  background-position:-453px -5px;
+}
+.videoPublish{
+  background:url(../../img/post_icons.png) no-repeat  -453px 0px;;	
+  float: left;
+  color: #9B9B9B;
+  display: block;
+  width: 70px;
+  height: 20px;
+  font-size: 14px;
+  line-height: 14px;
+  text-align: center;
+  text-indent: 8px;
+  letter-spacing: 8px;
+  text-decoration: none;
+  padding-top: 60px;
+  margin-left:10px;
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>biu~biu~biu~首页~喵~</title>
+<link href="__PUBLIC__/css/Index/index.css" rel="stylesheet" type="text/css" />
+<link href="../../../Public/css/Index/index.css" rel="stylesheet" type="text/css" />
+<link href="__PUBLIC__/css/Index/message.css" rel="stylesheet" type="text/css" />
+<link href="../../../Public/css/Index/message.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="__PUBLIC__/js/index.js"></script>
+<script type="text/javascript" src="../../../Public/js/index.js"></script>
+</head>
+
+
+
+<body>
+
+<div class="all">
+
+    <!--header-->
+    <include file="Public:header"/>
+    
+    <!--body-->
+    <div class="body">
+    
+        <!--content-->
+        <div id="content">
+            <!--publish article-->
+            <include file="Public:publish"/>
+            
+            <div  style="margin-top:50px;width:100%;">
+                <ul style="list-style: none; border:0;padding:0;border-radius:5px;border: 1px solid #C7CACC"> 
+                    <volist name="list" id="vo">
+                        <li class="messageLi">
+                            <a href={$vo.href} class="message"  onclick="readMessage({$vo.mid},{$vo.readed})">
+                                <span class="messageIcon{$vo.readed}"></span>
+                                <span style="margin-left:20px">{$vo.content}</span>
+                                <span style="float:right; margin-right:20px">{$vo.time} </span>
+                            </a>
+                        </li> 
+                    </volist>
+                </ul>
+                
+            <div style="float:right; margin:10px"> 
+            {$page}
+            </div>                
+            </div>
+                                
+        </div>
+        <!--content over-->
+        
+        <!--nav-->
+        <div id="nav">
+            <!--nav user-->
+            <include file="Public:navUser"/>            
+            <!--nav tag-->
+            <include file="Public:navTag"/>                         
+            <!--nav tag-->
+            <include file="Public:navBlog"/>   
+        </div>
+        <!--nav over-->
+        
+    </div>
+    <!--body over-->
+</div>
+</body>
+<script type="text/javascript">
+    function readMessage(mid,readed){
+		if(!readed){		
+		   // alert(mid);	
+			var xhr=new XMLHttpRequest();
+			//xhr.onreadystatechange=null;
+	        xhr.open("GET","http://localhost:8080/index.php/Ajax/readMessage/mid/"+mid,false);
+	        xhr.send(null);
+			//alert(mid);	
+			//return false;
+		}
+		//
+	}
+</script>
+</html>

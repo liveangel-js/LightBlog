@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>biu~biu~biu~首页~喵~</title>
+<link href="__PUBLIC__/css/Index/index.css" rel="stylesheet" type="text/css" />
+<link href="../../../Public/css/Index/index.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="__PUBLIC__/js/index.js"></script>
+<script type="text/javascript" src="../../../Public/js/index.js"></script>
+<style type="text/css">  
+#imghead {filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=image);}  
+</style> 
+</head>
+
+
+
+<body>
+
+<div class="all">
+
+    <!--header-->
+    <include file="Public:header"/>
+    
+    <!--body-->
+    <div class="body">
+    
+        <!--content-->
+        <div id="content">
+            <!--publish article-->
+            
+            <include file="Public:publish"/>
+            
+            <div style="border-radius:5px; background:rgb(200,200,200); float:left; margin:40px 0px; padding:20px 30px; height:150px;">
+                <div style=" ">
+                    <span>邮 箱 ：{$user.email}</span>
+                </div>
+                <form action="__URL__/../User/setPassword" method="post">
+                    <p>原密码:<input name="oldpassword"  type="password"/></p>
+                    <p>原密码:<input name="newpassword" type="password"/></p>
+                    <p>原密码:<input name="repassword" type="password"/>
+                             <input type="submit" value="修改"/>
+                    </p>
+                </form>               
+            </div>
+            
+            
+            <div  style="border-radius:5px; background:rgb(200,200,200); float:right; margin:40px 0px; padding:20px 30px;height:150px;">
+                <form action="__URL__/../User/setAvatar" method="post" enctype="multipart/form-data">
+                    <div>
+                         <span>头像:</span>
+                         <img id="imghead" src="{$user.avatar}" width="64px" height="64px"></img>
+                         <input  type="submit" value="确认修改"/>
+                    </div>                  
+                    <div style="margin-top:20px">
+                        <input name="avatar" type="file" onchange="previewImage(this)"     accept="image/*"></input>
+                    </div>
+                </form>
+            </div>
+                     
+        </div>
+        <!--content over-->
+        
+        <!--nav-->
+        <div id="nav">
+            <!--nav user-->
+            <include file="Public:navUser"/>            
+            <!--nav tag-->
+            <include file="Public:navTag"/>                         
+            <!--nav tag-->
+            <include file="Public:navBlog"/>   
+        </div>
+        <!--nav over-->
+        
+    </div>
+    <!--body over-->
+</div>
+</body>
+<script type="text/javascript">
+function previewImage(file)  
+{  
+  
+  var MAXWIDTH  = 64;  
+  var MAXHEIGHT = 64;  
+ // var div = document.getElementById('preview');  
+  if (file.files && file.files[0])  
+  {  
+   // div.innerHTML = '<img id=imghead>';  
+    var img = document.getElementById('imghead');  
+    img.onload = function(){  
+      var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);  
+      img.width = rect.width;  
+      img.height = rect.height;  
+      img.style.marginLeft = rect.left+'px';  
+      img.style.marginTop = rect.top+'px';  
+    }  
+    var reader = new FileReader();  
+    reader.onload = function(evt){img.src = evt.target.result;}  
+    reader.readAsDataURL(file.files[0]);  
+  }  
+  else  
+  {  
+    var sFilter='filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src="';  
+    file.select();  
+    var src = document.selection.createRange().text;  
+    div.innerHTML = '<img id=imghead>';  
+    var img = document.getElementById('imghead');  
+    img.filters.item('DXImageTransform.Microsoft.AlphaImageLoader').src = src;  
+    var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);  
+    status =('rect:'+rect.top+','+rect.left+','+rect.width+','+rect.height);  
+    div.innerHTML = "<div id=divhead style='width:"+rect.width+"px;height:"+rect.height+"px;margin-top:"+rect.top+"px;margin-left:"+rect.left+"px;"+sFilter+src+"\"'></div>";  
+  }  
+}  
+function clacImgZoomParam( maxWidth, maxHeight, width, height ){  
+    var param = {top:0, left:0, width:width, height:height};  
+    if( width>maxWidth || height>maxHeight )  
+    {  
+        rateWidth = width / maxWidth;  
+        rateHeight = height / maxHeight;  
+          
+        if( rateWidth > rateHeight )  
+        {  
+            param.width =  maxWidth;  
+            param.height = Math.round(height / rateWidth);  
+        }else  
+        {  
+            param.width = Math.round(width / rateHeight);  
+            param.height = maxHeight;  
+        }  
+    }  
+      
+    param.left = Math.round((maxWidth - param.width) / 2);  
+    param.top = Math.round((maxHeight - param.height) / 2);  
+    return param;  
+} 
+</script>
+</html>

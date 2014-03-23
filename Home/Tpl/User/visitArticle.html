@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>biu~biu~biu~阅读轻博客~喵~</title>
+<link href="__PUBLIC__/css/Index/index.css" rel="stylesheet" type="text/css" />
+<link href="../../../Public/css/Index/index.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="__PUBLIC__/js/index.js"></script>
+<script type="text/javascript" src="../../../Public/js/index.js"></script>
+</head>
+
+
+
+<body>
+
+<div class="all">
+
+    <!--header-->
+    <include file="Public:header"/>
+    
+    <!--body-->
+    <div class="body">
+    
+        <!--content-->
+        <div id="content">
+            <!--publish article-->
+            <include file="Public:publish"/>
+                <!-- article item --> 
+                <div class="articleItem">
+                
+                    <!-- avatar --> 
+                    <div class="avatar">
+                        <a class="avatarImg" style="background-image:url({$vo.user.avatar})" title="{$vo.user.nickname}" href="__URL__/../User/visitBlog/uid/{$vo.user.uid}"></a>
+                    </div>
+                    <!-- avatar over--> 
+                    
+                    <!-- blog --> 
+                    <div class="articleHolder">
+                    
+                        <div class="triangle">
+                        </div>
+                        <div style="position:relative; top:-15px">
+                        
+                        
+                        <h3 style="float:left; position:relative; top:-20px;">{$vo.title}</h3>
+                            <div style="float:right">
+                            {$vo.time}
+                            </div>
+                        
+                        </div>
+                        
+                        <!-- blog content--> 
+                        <div class="articleContent">
+                        {$vo.content|htmlspecialchars_decode} 
+                        </div>
+                        <!-- blog content over--> 
+                        
+                        
+                        <div class="articleFooter">
+                            <div class="articleTags">
+                                <volist name="vo.tags" id="tag">
+                                <a href="__URL__/../Search/searchTag/tag/{$tag.tag}" class="articleTag">#{$tag.tag}</a>
+                                </volist>
+                            </div>
+                            <div class="articleAction">        
+                                <a id="{$vo.aid}like" class="{$vo.like}" onclick="like({$vo.aid})" title="喜欢" style="display:{$vo.user.own}"></a>
+                                <a class="articleActionItem">热度(<span id="{$vo.aid}hotButton" >{$vo.hot}</span>)</a>
+                                <a class="articleActionItem" onclick="getComment({$vo.aid})">回应(<span id="{$vo.aid}commentButton">{$vo.comment}</span>)</a>
+                                <a class="articleActionItem" onclick="openArticle({$vo.aid})" style="display:{$vo.user.own}">转载</a>
+                            </div>
+                        </div>
+                        <div id={$vo.aid} class="articleComment">
+                            <input id="{$vo.aid}input" type="text" class="commentInput"  size="68" onfocus="this.value='',this.style.color='black'"  value="输入评论"> </input>
+                            <input type="button" value="评 论"   class="commentButton" onclick="addComment({$vo.aid},{$user.uid},'{$user.nickname}','{$user.avatar}')"></input>
+                            <div id="{$vo.aid}respondcomment" style="display:none">
+                        <input id="{$vo.aid}reinput" type="text" class="commentInput"  size="68" onfocus="this.value='',this.style.color='black'"  value="输入评论"> </input>
+                        <input type="button" id="{$vo.aid}rebutton"   class="commentButton" onclick="readdComment({$vo.aid},{$user.uid},'{$user.nickname}','{$user.avatar}')"></input>
+                    </div>
+                            
+                            
+                            
+                            <ul id="{$vo.aid}list" class="commentlist">
+
+                            </ul>
+                        </div>
+                        <div id="{$vo.aid}reArticle" class="articleComment">
+                            <input id="{$vo.aid}inputReArticle" type="text" class="commentInput"  size="68" onfocus="this.value='',this.style.color='black'"  value="转载理由"> </input>
+                            <input type="button" value="转 载"  class="commentButton" onclick="reArticle({$vo.aid})"></input>
+                            <ul  class="commentlist">
+                            </ul>
+                        </div>
+                   </div>    
+                   <!-- blog  over--> 
+                   
+                </div>
+                <!-- article item over-->  
+
+
+                      
+        </div>
+        <!--content over-->
+        
+        <!--nav-->
+        <div id="nav">
+            <!--nav user-->
+            <include file="Public:navUser"/>            
+            <!--nav tag-->
+            <include file="Public:navTag"/>                         
+            <!--nav tag-->
+            <include file="Public:navBlog"/>   
+        </div>
+        <!--nav over-->
+        
+    </div>
+    <!--body over-->
+</div>
+</body>
+</html>

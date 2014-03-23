@@ -1,0 +1,1 @@
+{"0":"laid","1":"uid","2":"aid","_autoinc":true,"_pk":"laid","_type":{"laid":"int(10)","uid":"int(10)","aid":"int(10)"}}

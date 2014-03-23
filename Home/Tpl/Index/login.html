@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link href="__PUBLIC__/css/login.css" rel="stylesheet" type="text/css" />
+<link href="../../../Public/css/login.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div align="center" class="div">
+    <form action="__URL__/loginCheck"  method="post" class="form">
+    <table style=" margin-top:20px">
+        <tr>
+            <td>邮箱</td>
+            <td><input type="text" name="email"    /></td>
+        </tr>
+        <tr>
+            <td>密码</td>
+            <td><input type="password" name="password" /></td>
+        </tr>
+        <tr>
+            <td>验证</td>
+            <td><input type="text" name="verify" /></td>
+            <td><img src="__URL__/verify"  title="刷新验证码" onclick="show(this)"/></td>
+        </tr>
+    </table>
+    <p align="center" class="p">
+        <input type="submit" value="登录" />
+        <input type="reset" value="清空"  />
+    </p>
+    </form>
+    <script type="text/javascript">
+    function show(obj){
+        obj.src="__URL__/verify";       
+    }
+    </script>
+</div> 
+</body>
+</html>

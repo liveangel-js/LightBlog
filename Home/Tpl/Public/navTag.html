@@ -1,0 +1,26 @@
+            <!--tag recommend and search-->
+            <div class="tagModule"> 
+                <ul class="list">  
+                    <li class="search">
+                        <form action="__URL__/../Search/searchTag" method="get">
+                        <input type="submit" class="searchButton" style="cursor:pointer" value="" onClick="searchTag()"/>
+                        <input type="text" id="searchInput"  name="tag" value="搜索标签" onfocus="this.value='',this.style.color='black'" size="20" />
+                        </form>
+                    </li>
+                    <volist name="recommendTags" id="vo">
+                        <li class="item" >
+                        <a href="../Search/searchTag/tag/{$vo.tag}" style="text-decoration:none; display:block; color:black;">
+                            <span class="icon"></span>
+                            <span>{$vo.tag}</span>
+                            <span id="tag{$vo.tag}" class="tag{$vo.like}icon"  onclick="return likeTag('{$vo.tag}')"></span>
+                        </a>
+                        </li>
+                    </volist>
+                    <li class="itemMore">
+                        <a href="__URL__/../Search/moreTag" style="text-decoration:none; color:black; display:block">
+                            <span class="icon"></span><span>更 多 标 签</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!--tag recommend and search over-->

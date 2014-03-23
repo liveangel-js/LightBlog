@@ -1,0 +1,1 @@
+{"0":"uid","1":"email","2":"password","3":"nickname","4":"time","5":"avatar","_autoinc":true,"_pk":"uid","_type":{"uid":"int(10)","email":"varchar(40)","password":"varchar(20)","nickname":"varchar(20)","time":"varchar(40)","avatar":"varchar(40)"}}
